@@ -1,0 +1,50 @@
+.modal {
+  width: 541px;
+  height: 100vh;
+  border-radius: 24px;
+  background: #fff;
+  z-index: 999;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.image {
+  width: 461px;
+  height: 248px;
+  margin: 0 auto;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+.nameAdYear {
+  display: block;
+  margin-top: 14px;
+  margin-bottom: 8px;
+  color: #121417;
+  font-family: Manrope;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 133.333% */
+}
+
+.model {
+  color: #3470ff;
+  font-family: Manrope;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.cityAndCountry {
+  box-sizing: border-box;
+  width: 277px;
+  height: 40px;
+}

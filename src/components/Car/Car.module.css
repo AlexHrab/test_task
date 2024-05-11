@@ -1,0 +1,68 @@
+.image {
+  width: 274px;
+  height: 288px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  fill: green;
+  cursor: pointer;
+  top: 10px;
+  right: 10px;
+}
+
+.active {
+  fill: red;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  cursor: pointer;
+  top: 10px;
+  right: 10px;
+}
+
+.item {
+  position: relative;
+  display: flex;
+  width: 274px;
+  height: 426px;
+  flex-direction: column;
+  /* align-items: flex-start; */
+  /* gap: 28px; */
+}
+
+.firstBlock {
+  display: flex;
+  justify-content: space-between;
+  color: #121417;
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+  margin-top: 14px;
+  margin-bottom: 8px;
+}
+
+.secondBlock {
+  color: rgba(18, 20, 23, 0.5);
+  font-family: Manrope;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 150% */
+  display: flex;
+  text-align: left;
+  margin-bottom: auto;
+}
+
+.textBlock {
+  height: 138px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
