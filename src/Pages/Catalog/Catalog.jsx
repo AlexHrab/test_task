@@ -43,7 +43,9 @@ export function Catalog({ onClick }) {
           clasName={"catalogBtn"}
         />
       )}
-      <CarModal isOpen={modalIsOpen} onClose={close} object={object} />
+      {modalIsOpen && (
+        <CarModal isOpen={modalIsOpen} onClose={close} object={object} />
+      )}
     </div>
   );
 }

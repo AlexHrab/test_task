@@ -1,5 +1,13 @@
+@font-face {
+  font-family: "Manrope";
+  src: url("../node_modules/manrope/complete/manrope-medium.woff2")
+    format("woff2");
+  /* Додаткові стилі, якщо потрібно */
+}
+/* ../node_modules/manrope/font/manrope.woff2 */
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif, Manrope;
   line-height: 1.5;
   font-weight: 400;
 
