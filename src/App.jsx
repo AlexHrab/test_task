@@ -32,6 +32,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="catalog" element={<Catalog onClick={onClick} />} />
           <Route path="favorites" element={<Favorites />} />
+          <Route path="*" element={<Home />} />
         </Route>
       </Routes>
     </div>

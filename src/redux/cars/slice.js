@@ -8,6 +8,7 @@ const initialState = {
   error: null,
   favoriteCars: [],
   page: null,
+  carsRentalPrice: [],
 };
 
 export const slice = createSlice({
@@ -28,6 +29,9 @@ export const slice = createSlice({
       })
       .addCase(fetchAllCars.fulfilled, (state, { payload }) => {
         state.carsAmount = payload.length;
+        payload.map((el) => {
+          state.carsRentalPrice.push(Number(el.rentalPrice.slice(1)));
+        });
       })
       .addCase(favoriteCar.fulfilled, (state, { payload }) => {
         const CarFavorite = state.cars.find((el) => el.id === payload.id);

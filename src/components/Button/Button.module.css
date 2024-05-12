@@ -1,7 +1,7 @@
 .btn {
   width: 100%;
   border-radius: 12px;
-  background: #3470ff;
+  background: #ff868d;
   color: var(--White, #fff);
   font-family: Manrope;
   font-size: 14px;
@@ -12,28 +12,11 @@
 
 .catalogBtn {
   border-radius: 12px;
-  background: #3470ff;
+  background: #ff868d;
   color: var(--White, #fff);
   font-family: Manrope;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
   line-height: 20px; /* 142.857% */
-}
-
-.modalBtn {
-  color: var(--White, #fff);
-  font-family: Manrope;
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 20px; /* 142.857% */
-  display: inline-flex;
-  padding: 12px 50px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 12px;
-  background: #3470ff;
-  width: 168px;
-  height: 44px;
 }

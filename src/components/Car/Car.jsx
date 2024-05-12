@@ -37,15 +37,15 @@ export function Car({ element, modalOpen }) {
             | {element.model} | {element.mileage} | {element.accessories[1]}
           </span>
         </div>
-        <Button
-          type={"button"}
-          credentionals={"Learn more"}
-          onClick={() => {
-            modalOpen(element);
-          }}
-          clasName={"btn"}
-        />
       </div>
+      <Button
+        type={"button"}
+        credentionals={"Learn more"}
+        onClick={() => {
+          modalOpen(element);
+        }}
+        clasName={"btn"}
+      />
     </li>
   );
 }

@@ -1,6 +1,11 @@
 import Select from "react-select";
 
-export function MainSelect({ options, selectObj, SetselectObj }) {
+export function MainSelect({
+  options,
+  selectObj,
+  SetselectObj,
+  classNamePrefix,
+}) {
   const customStyles = {
     menu: (provided, state) => ({
       ...provided,
@@ -20,7 +25,7 @@ export function MainSelect({ options, selectObj, SetselectObj }) {
       options={options}
       defaultValue={selectObj}
       onChange={SetselectObj}
-      classNamePrefix="input"
+      classNamePrefix={classNamePrefix}
       styles={customStyles}
       className="selectInput"
     />

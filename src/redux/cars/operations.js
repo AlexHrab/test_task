@@ -37,7 +37,6 @@ export const favoriteCar = createAsyncThunk(
   "cars/favorite",
   async (value, thunkAPI) => {
     try {
-      console.log(value);
       return value;
     } catch (error) {
       return thunkAPI.rejectWithValue(alert(error.message));

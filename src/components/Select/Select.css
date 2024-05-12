@@ -1,44 +1,19 @@
-/* Стилізація випадаючого меню */
-.input__menu {
-  border-radius: 8px;
-  background: gray !important;
+.price__control {
+  width: 100px !important;
+  max-height: 25px;
+  border: solid 2px gray !important;
+  color: var(--white, #fbfbfb) !important;
+  font-family: Poppins !important;
+  font-size: 16px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: normal !important;
+  outline: none !important;
+}
 
-  /* form effects */
-  box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(50px);
-  width: 181px;
+.price__menu-list {
   height: 157px;
-  color: var(--white, #fbfbfb);
-  font-family: Poppins;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  /* position: absolute; */
-  padding: 0;
-  margin: auto;
-  flex: 1;
-  /* transform: translateY(-50%); */
-  scrollbar-width: none;
-}
-
-.inputSelect {
-  background: transparent;
   overflow: hidden;
-  position: relative;
-  z-index: 9;
-  /* box-sizing: content-box; */
-  display: block;
-  /* position: static; */
-  /* width: 182px;
-    height: 290px; */
-}
-
-.input__menu-list::-webkit-scrollbar {
-  background-color: transparent;
-  scrollbar-width: 0;
-  scrollbar-width: none;
-  height: 600px;
 }
 
 .input__menu-list {
@@ -46,23 +21,12 @@
   overflow: hidden;
 }
 
+.price__option--is-selected {
+  background: #ff868d !important;
+}
+
 .input__option--is-selected {
-  background: transparent !important;
-}
-
-/* Стилізація опцій при наведенні */
-.input__option:hover {
-  background: var(--Form-color, rgba(255, 255, 255, 0.1));
-  color: #ff868d;
-  font-family: Poppins;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.input__indicator-separator {
-  display: none;
+  background: #ff868d !important;
 }
 
 .input__control {
@@ -76,92 +40,4 @@
   font-weight: 400 !important;
   line-height: normal !important;
   outline: none !important;
-}
-
-.input__control--is-focused {
-  border: solid 2px gray !important;
-  outline: none !important;
-}
-
-.input__control--is-focused:focus {
-  border: solid 2px gray !important;
-  outline: none !important;
-}
-
-.input__control:focus {
-  border: solid 2px gray !important;
-  outline: none !important;
-}
-
-/* .selectInput {
-  background: transparent !important;
-  background-color: transparent !important;
-  /* border: 1px solid var(--white-60, rgba(255, 255, 255, 0.6)); */
-/* border-radius: 8px;
-  color: var(--white, #fbfbfb) !important;
-  font-family: Poppins !important;
-  font-size: 16px !important;
-  font-style: normal !important;
-  font-weight: 400 !important;
-  line-height: normal !important;
-} */
-*/ .input__placeholder {
-  color: var(--white, #fbfbfb) !important;
-  font-family: Poppins !important;
-  font-size: 16px !important;
-  font-style: normal !important;
-  font-weight: 400 !important;
-  line-height: normal !important;
-}
-
-.input__value-container {
-  /* width: 181px;
-  height: 40px; */
-  color: var(--white, #fbfbfb) !important;
-  font-family: Poppins !important;
-  font-size: 16px !important;
-  font-style: normal !important;
-  font-weight: 400 !important;
-  line-height: normal !important;
-}
-
-/* .input__single-value {
-  color: var(--white, #fbfbfb) !important;
-  font-family: Poppins !important;
-  font-size: 16px !important;
-  font-style: normal !important;
-  font-weight: 400 !important;
-  line-height: normal !important;
-} */
-
-/* .css-tj5bde-Svg {
-  width: 40px !important;
-  height: 40px !important;
-  stroke-width: 0.003rem !important;
-  margin: auto;
-} */
-
-.css-tj5bde-Svg:hover,
-.css-tj5bde-Svg:hover:focus,
-.css-tj5bde-Svg:hover:active {
-  stroke: gray !important;
-  fill: gray !important;
-}
-
-._svg_rvwpd_345 {
-  stroke: gray;
-  fill: gray;
-  display: block;
-  width: 50px !important;
-  height: 50px !important;
-}
-
-.input__input-container {
-  margin: auto;
-}
-
-.react-select-container {
-  border-width: 2px; /* Товщина рамки */
-  border-style: solid; /* Стиль рамки */
-  border-color: #ccc; /* Колір рамки */
 }

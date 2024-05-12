@@ -4,4 +4,15 @@
   margin: 0 auto;
   /* padding: 2rem; */
   text-align: center;
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: green;
+    height: 20px;
+    border-radius: 15px;
+  }
 }
