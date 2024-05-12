@@ -9,6 +9,7 @@ import {
   changeFilterFavoriteCars,
   changeFilterPrice,
   changeFavoriteFilterPrice,
+  changeFilterMileage,
 } from "../../redux/filter/slice";
 import { useSelector } from "react-redux";
 import {
@@ -20,7 +21,8 @@ import {
 import { useLocation } from "react-router-dom";
 import "../Select/Select.css";
 import { RentalPrice } from "../Select/rentalPrice";
-import { selectRental } from "../../redux/filter/selectors";
+import { selectRental, selectMileage } from "../../redux/filter/selectors";
+import { SearchForm } from "../SearchForm/SearchForm";
 
 export function Navbar() {
   const [selectedCar, setSelectedCar] = useState({ value: "", label: "" });
@@ -28,11 +30,19 @@ export function Navbar() {
     value: "",
     label: "",
   });
+
   const [selectedPrice, setselectedPrice] = useState({ value: "", label: "" });
   const [selectedFavoritePrice, setselectedFavoritePrice] = useState({
     value: "",
     label: "",
   });
+
+  // const [mileage, setMileage] = useState({
+  //   minMileage: null,
+  //   maxMileage: null,
+  // });
+  const newMileage = useSelector(selectMileage);
+  console.log(newMileage);
 
   const dispatch = useDispatch();
 
@@ -52,19 +62,16 @@ export function Navbar() {
     dispatch(changeFavoriteFilterPrice(selectedFavoritePrice.value));
   }, [dispatch, selectedFavoritePrice]);
 
-  // const pricePrice = useSelector(selectRental);
-
-  // console.log(pricePrice);
+  // dispatch(
+  //   changeFilterMileage({
+  //     minMileage: mileage.minMileage,
+  //     maxMileage: mileage.maxMileage,
+  //   })
+  // );
 
   const location = useLocation();
 
   const link = location.pathname;
-
-  // const rentalPrice = useSelector(selectRentalPrice);
-  // const maxNumber = Math.max(...rentalPrice);
-  // const minNumber = Math.min(...rentalPrice);
-  // console.log(maxNumber);
-  // console.log(minNumber);
 
   const rentalPrice = RentalPrice();
 
@@ -105,6 +112,7 @@ export function Navbar() {
                 classNamePrefix={"price"}
               />
             </div>
+            <SearchForm />
           </div>
         )}
         {link === "/favorites" && (

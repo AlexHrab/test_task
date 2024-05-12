@@ -22,11 +22,29 @@
 }
 
 .price__option--is-selected {
-  background: #ff868d !important;
+  background: rgb(212 212 212) !important;
+  height: 36px;
+}
+
+.price__option {
+  height: 36px;
+}
+
+.price__option:hover {
+  background: rgb(229 229 229) !important;
 }
 
 .input__option--is-selected {
-  background: #ff868d !important;
+  background: rgb(212 212 212) !important;
+  height: 36px;
+}
+
+.input__option {
+  height: 36px;
+}
+
+.input__option:hover {
+  background: rgb(229 229 229) !important;
 }
 
 .input__control {

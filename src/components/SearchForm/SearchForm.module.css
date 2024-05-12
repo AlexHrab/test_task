@@ -1,0 +1,55 @@
+.input {
+  box-sizing: border-box;
+  height: 38px;
+  width: 120px;
+  outline: none;
+  border: solid 2px gray;
+  border-radius: 4px;
+  padding: 4px;
+  padding-left: 40px;
+  font-size: 18px;
+  font-weight: 700;
+  color: gray;
+}
+
+.input:first-of-type {
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-left: 6px;
+}
+
+.input:last-of-type {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding-left: 43px;
+}
+
+.formBox {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+}
+
+.min {
+  position: absolute;
+  top: -13px;
+  right: 296px;
+  font-size: 18px;
+  font-weight: 700;
+  color: gray;
+}
+
+.max {
+  top: -13px;
+  position: absolute;
+  right: 173px;
+  font-size: 18px;
+  font-weight: 700;
+  color: gray;
+}
