@@ -10,6 +10,7 @@ import {
   changeFilterPrice,
   changeFavoriteFilterPrice,
   changeFilterMileage,
+  changeFilterFavoriteMileage,
 } from "../../redux/filter/slice";
 import { useSelector } from "react-redux";
 import {
@@ -21,10 +22,18 @@ import {
 import { useLocation } from "react-router-dom";
 import "../Select/Select.css";
 import { RentalPrice } from "../Select/rentalPrice";
-import { selectRental, selectMileage } from "../../redux/filter/selectors";
+import {
+  selectRental,
+  selectMileage,
+  selectFavoriteMileage,
+} from "../../redux/filter/selectors";
 import { SearchForm } from "../SearchForm/SearchForm";
 
 export function Navbar() {
+  const currentMiliage = useSelector(selectMileage);
+  const currentFavoriteMiliage = useSelector(selectFavoriteMileage);
+  console.log(currentMiliage);
+
   const [selectedCar, setSelectedCar] = useState({ value: "", label: "" });
   const [selectedFavoriteCar, setSelectedFavoriteCar] = useState({
     value: "",
@@ -37,12 +46,15 @@ export function Navbar() {
     label: "",
   });
 
-  // const [mileage, setMileage] = useState({
-  //   minMileage: null,
-  //   maxMileage: null,
-  // });
-  const newMileage = useSelector(selectMileage);
-  console.log(newMileage);
+  const [formMileageValue, setFormMileageValue] = useState({
+    minMileageValue: currentMiliage.minMileage,
+    maxMileageValue: currentMiliage.maxMileage,
+  });
+
+  const [formFavoriteMileageValue, setformFavoriteMileageValue] = useState({
+    minMileageValue: currentFavoriteMiliage.minMileage,
+    maxMileageValue: currentFavoriteMiliage.maxMileage,
+  });
 
   const dispatch = useDispatch();
 
@@ -62,12 +74,23 @@ export function Navbar() {
     dispatch(changeFavoriteFilterPrice(selectedFavoritePrice.value));
   }, [dispatch, selectedFavoritePrice]);
 
-  // dispatch(
-  //   changeFilterMileage({
-  //     minMileage: mileage.minMileage,
-  //     maxMileage: mileage.maxMileage,
-  //   })
-  // );
+  useEffect(() => {
+    dispatch(
+      changeFilterMileage({
+        minMileage: formMileageValue.minMileageValue,
+        maxMileage: formMileageValue.maxMileageValue,
+      })
+    );
+  }, [formMileageValue]);
+
+  useEffect(() => {
+    dispatch(
+      changeFilterFavoriteMileage({
+        minMileage: formFavoriteMileageValue.minMileageValue,
+        maxMileage: formFavoriteMileageValue.maxMileageValue,
+      })
+    );
+  }, [formFavoriteMileageValue]);
 
   const location = useLocation();
 
@@ -112,7 +135,11 @@ export function Navbar() {
                 classNamePrefix={"price"}
               />
             </div>
-            <SearchForm />
+            <SearchForm
+              setFormMileageValue={setFormMileageValue}
+              minValue={currentMiliage.minMileage}
+              maxValue={currentMiliage.maxMileage}
+            />
           </div>
         )}
         {link === "/favorites" && (
@@ -137,6 +164,11 @@ export function Navbar() {
                 classNamePrefix={"price"}
               />
             </div>
+            <SearchForm
+              setFormMileageValue={setformFavoriteMileageValue}
+              minValue={currentFavoriteMiliage.minMileage}
+              maxValue={currentFavoriteMiliage.maxMileage}
+            />
           </div>
         )}
       </div>

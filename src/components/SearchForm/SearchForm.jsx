@@ -1,34 +1,28 @@
 import css from "./SearchForm.module.css";
 import { Button } from "../Button/Button";
-import { useSelector } from "react-redux";
-import { changeFilterMileage } from "../../redux/filter/slice";
-import { useDispatch } from "react-redux";
+import { useState } from "react";
 
-export function SearchForm() {
-  const dispatch = useDispatch();
+export function SearchForm({ setFormMileageValue, minValue, maxValue }) {
+  const [minMileage, setMinMileage] = useState(minValue);
+  const [maxMileage, setMaxMileage] = useState(maxValue);
+
   function Submit(evt) {
     evt.preventDefault();
     const form = evt.target;
-    const minCarMileage = form.elements.min_mileage.value;
-    const maxCarMileage = form.elements.max_mileage.value;
     if (
       form.elements.min_mileage.value.trim() === "" &&
       form.elements.max_mileage.value.trim() === ""
     ) {
-      dispatch(
-        changeFilterMileage({
-          minMileage: null,
-          maxMileage: Infinity,
-        })
-      );
+      setFormMileageValue({
+        minMileageValue: null,
+        maxMileageValue: Infinity,
+      });
       return;
     }
-    dispatch(
-      changeFilterMileage({
-        minMileage: minCarMileage,
-        maxMileage: maxCarMileage,
-      })
-    );
+    setFormMileageValue({
+      minMileageValue: minMileage,
+      maxMileageValue: maxMileage,
+    });
   }
 
   return (
@@ -44,6 +38,8 @@ export function SearchForm() {
           type="text"
           autoComplete="off"
           autoFocus
+          value={minMileage === null ? "" : minMileage}
+          onChange={(e) => setMinMileage(e.target.value)}
         />
         <input
           className={css.input}
@@ -51,6 +47,8 @@ export function SearchForm() {
           type="text"
           autoComplete="off"
           autoFocus
+          value={maxMileage === Infinity ? "" : maxMileage}
+          onChange={(e) => setMaxMileage(e.target.value)}
         />
         <Button type={"submit"} credentionals={"Search"} clasName={"formBtn"} />
       </form>

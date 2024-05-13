@@ -5,6 +5,7 @@ import {
   selectRental,
   selecFavoriteRental,
   selectMileage,
+  selectFavoriteMileage,
 } from "../filter/selectors";
 
 export const selectCars = (state) => state.cars.cars;
@@ -26,12 +27,19 @@ export const selectFilteredCarsMemo = createSelector(
 );
 
 export const selectFavoriteFilteredCarsMemo = createSelector(
-  [selectFavorite, selectFavoritCarsFilter, selecFavoriteRental],
-  (cars, filterName, price) => {
+  [
+    selectFavorite,
+    selectFavoritCarsFilter,
+    selecFavoriteRental,
+    selectFavoriteMileage,
+  ],
+  (cars, filterName, price, mileage) => {
     return cars.filter(
       (car) =>
         car.make.toLowerCase().includes(filterName.toLowerCase()) &&
-        Number(car.rentalPrice.slice(1)) >= price
+        Number(car.rentalPrice.slice(1)) >= price &&
+        car.mileage >= mileage.minMileage &&
+        car.mileage <= mileage.maxMileage
     );
   }
 );

@@ -10,6 +10,7 @@ import { fetchAllCars, fetchCars } from "./redux/cars/operations";
 
 function App() {
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(fetchAllCars());
   }, []);

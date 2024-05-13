@@ -4,3 +4,4 @@ export const selectFavoritCarsFilter = (state) =>
 export const selectRental = (state) => state.filter.rentalPrice;
 export const selecFavoriteRental = (state) => state.filter.rentalFavoritePrice;
 export const selectMileage = (state) => state.filter.mileage;
+export const selectFavoriteMileage = (state) => state.filter.favoriteMileage;
