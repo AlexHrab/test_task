@@ -43,3 +43,25 @@ export const favoriteCar = createAsyncThunk(
     }
   }
 );
+
+export const loadCars = createAsyncThunk(
+  "cars/loadCars",
+  async (value, thunkAPI) => {
+    try {
+      return value;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(alert(error.message));
+    }
+  }
+);
+
+export const setNewPage = createAsyncThunk(
+  "cars/page",
+  async (value, thunkAPI) => {
+    try {
+      return value;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(alert(error.message));
+    }
+  }
+);

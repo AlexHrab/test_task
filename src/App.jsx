@@ -6,24 +6,43 @@ import { Catalog } from "./Pages/Catalog/Catalog";
 import { Favorites } from "./Pages/Favorites/Favorites";
 import { Navbar } from "./components/Navbar/Navbar";
 import { useDispatch } from "react-redux";
-import { fetchAllCars, fetchCars } from "./redux/cars/operations";
+import {
+  fetchAllCars,
+  fetchCars,
+  loadCars,
+  setNewPage,
+} from "./redux/cars/operations";
+import {
+  selectCarsAmount,
+  selectLoadCars,
+  selectPage,
+} from "./redux/cars/selectors";
+import { selectCars } from "./redux/cars/selectors";
+import { useSelector } from "react-redux";
 
 function App() {
   const dispatch = useDispatch();
+
+  const loadAllCars = useSelector(selectLoadCars);
+  const page = useSelector(selectPage);
 
   useEffect(() => {
     dispatch(fetchAllCars());
   }, []);
 
   const pageSize = 12;
-  const [page, setPage] = useState(1);
 
   useEffect(() => {
-    dispatch(fetchCars({ page, pageSize }));
-  }, [page, dispatch, pageSize]);
+    if (loadAllCars) {
+      dispatch(fetchCars({ page, pageSize }));
+      dispatch(loadCars(false));
+    }
+  }, [pageSize, loadAllCars, page, dispatch]);
 
   function onClick() {
-    setPage((prevPage) => prevPage + 1);
+    dispatch(loadCars(true));
+
+    dispatch(setNewPage(page + 1));
   }
 
   return (

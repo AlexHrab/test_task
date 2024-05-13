@@ -10,13 +10,19 @@ import {
   selectCarsAmount,
   selectCars,
   selectFilteredCarsMemo,
+  selectLoading,
 } from "../../redux/cars/selectors";
 import CarModal from "../../components/Modal/Modal";
+import { Loader } from "../../components/Loader/Loader";
+import css from "./Catalog.module.css";
 
 export function Catalog({ onClick }) {
   const dispatch = useDispatch();
   const carsAmount = useSelector(selectCarsAmount);
   const carSelect = useSelector(selectCars);
+  const isLoading = useSelector(selectLoading);
+  // console.log(carsAmount);
+  // console.log(carSelect.length);
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [object, setObject] = useState({});
@@ -33,9 +39,9 @@ export function Catalog({ onClick }) {
   const cars = useSelector(selectFilteredCarsMemo);
 
   return (
-    <div>
+    <div className={css.catalog}>
       <CarList cars={cars} modalOpen={isOpenModal} />
-      {carsAmount !== carSelect.length && (
+      {carsAmount > carSelect.length && cars.length > 0 && (
         <Button
           type={"button"}
           credentionals={"Load more"}
@@ -43,6 +49,7 @@ export function Catalog({ onClick }) {
           clasName={"catalogBtn"}
         />
       )}
+      {isLoading && <Loader />}
       {modalIsOpen && (
         <CarModal isOpen={modalIsOpen} onClose={close} object={object} />
       )}

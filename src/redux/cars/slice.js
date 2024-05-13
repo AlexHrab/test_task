@@ -1,5 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchCars, fetchAllCars, favoriteCar } from "./operations";
+import {
+  fetchCars,
+  fetchAllCars,
+  favoriteCar,
+  loadCars,
+  setNewPage,
+} from "./operations";
 
 const initialState = {
   cars: [],
@@ -7,8 +13,9 @@ const initialState = {
   loading: false,
   error: null,
   favoriteCars: [],
-  page: null,
+  page: 1,
   carsRentalPrice: [],
+  loadCars: true,
 };
 
 export const slice = createSlice({
@@ -49,6 +56,12 @@ export const slice = createSlice({
             isActive: payload.isActive,
           });
         }
+      })
+      .addCase(loadCars.fulfilled, (state, { payload }) => {
+        state.loadCars = payload;
+      })
+      .addCase(setNewPage.fulfilled, (state, { payload }) => {
+        state.page = payload;
       });
   },
 });

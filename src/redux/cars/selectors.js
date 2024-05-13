@@ -12,6 +12,9 @@ export const selectCars = (state) => state.cars.cars;
 export const selectCarsAmount = (state) => state.cars.carsAmount;
 export const selectFavorite = (state) => state.cars.favoriteCars;
 export const selectRentalPrice = (state) => state.cars.carsRentalPrice;
+export const selectLoading = (state) => state.cars.loading;
+export const selectLoadCars = (state) => state.cars.loadCars;
+export const selectPage = (state) => state.cars.page;
 
 export const selectFilteredCarsMemo = createSelector(
   [selectCars, selectCarsFilter, selectRental, selectMileage],
