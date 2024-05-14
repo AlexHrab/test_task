@@ -16,6 +16,7 @@ export function Car({ element, modalOpen }) {
 
   return (
     <li className={css.item}>
+      <div className={css.box}></div>
       <HiHeart
         className={carIsActive?.isActive ? css.active : css.icon}
         onClick={() => {

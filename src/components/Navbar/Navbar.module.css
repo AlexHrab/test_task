@@ -2,7 +2,7 @@
   display: flex;
   margin: 0;
   list-style-type: none;
-  gap: 20px;
+  gap: 10px;
   margin-right: 20px;
 }
 
@@ -13,14 +13,8 @@
   justify-content: flex-start;
   align-items: center;
   height: 50px;
-}
-
-.Container {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  margin-bottom: 0px;
+  padding: 15px 0 15px;
 }
 
 .selectBox {
@@ -33,4 +27,30 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
+}
+
+.navLink {
+  display: flex;
+  justify-content: center;
+  border-radius: 8px;
+  align-items: center;
+  background: gray;
+  height: 40px;
+  width: 98px;
+  color: white;
+}
+
+.navLink:hover {
+  color: white;
+  background: #ff868d;
+}
+
+.inputLabel {
+  color: #ff868d;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.active {
+  background-color: #ff868d;
 }

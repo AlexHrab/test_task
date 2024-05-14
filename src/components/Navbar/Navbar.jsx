@@ -28,6 +28,8 @@ import {
   selectFavoriteMileage,
 } from "../../redux/filter/selectors";
 import { SearchForm } from "../SearchForm/SearchForm";
+import clsx from "clsx";
+import { GreatingText } from "../GreatingText/GreatingText";
 
 export function Navbar() {
   const currentMiliage = useSelector(selectMileage);
@@ -98,24 +100,37 @@ export function Navbar() {
 
   const rentalPrice = RentalPrice();
 
+  const linkClass = ({ isActive }) => {
+    return clsx(css.navLink, isActive && css.active);
+  };
+
   return (
     <div className={css.Container}>
       <div className={css.navbarContainer}>
         <ul className={css.navbarList}>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/" className={linkClass}>
+              Home
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/catalog">Catalog</NavLink>
+            <NavLink to="/catalog" className={linkClass}>
+              Catalog
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/favorites">Favorites</NavLink>
+            <NavLink to="/favorites" className={linkClass}>
+              Favorites
+            </NavLink>
           </li>
         </ul>
+        {link === "/" && <GreatingText />}
         {link === "/catalog" && (
           <div className={css.selectBox}>
             <div className={css.label}>
-              <label htmlFor="input">Cars:</label>
+              <label htmlFor="input" className={css.inputLabel}>
+                Cars:
+              </label>
               <MainSelect
                 id="input"
                 options={Cars}
@@ -126,7 +141,9 @@ export function Navbar() {
               />
             </div>
             <div className={css.label}>
-              <label htmlFor="price">Rental price:</label>
+              <label htmlFor="price" className={css.inputLabel}>
+                Rental price:
+              </label>
               <MainSelect
                 id="price"
                 options={rentalPrice}
@@ -145,7 +162,9 @@ export function Navbar() {
         {link === "/favorites" && (
           <div className={css.selectBox}>
             <div className={css.label}>
-              <label htmlFor="input">Cars:</label>
+              <label htmlFor="input" className={css.inputLabel}>
+                Cars:
+              </label>
               <MainSelect
                 options={Cars}
                 selectObj={selectedFavoriteCar}
@@ -155,7 +174,9 @@ export function Navbar() {
               />
             </div>
             <div className={css.label}>
-              <label htmlFor="price">Rental price:</label>
+              <label htmlFor="price" className={css.inputLabel}>
+                Rental price:
+              </label>
               <MainSelect
                 id="price"
                 options={rentalPrice}

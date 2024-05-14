@@ -1,18 +1,23 @@
 .btn {
   /* width: 100%; */
-  border-radius: 12px;
+  /* border-radius: 12px; */
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
   background: #ff868d;
   color: var(--White, #fff);
   font-family: Manrope;
-  font-size: 14px;
+  font-size: 18px;
+  font-weight: 800;
   font-style: normal;
   font-weight: 600;
   line-height: 20px; /* 142.857% */
   display: flex;
-  width: 130px;
+  width: 180px;
   padding-right: 10px;
   padding-left: 10px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   align-items: center;
   justify-content: center;
 }
@@ -31,4 +36,17 @@
 
 .formBtn {
   margin-left: 8px;
+  display: flex;
+  justify-content: center;
+  border-radius: 8px;
+  align-items: center;
+  background: gray;
+  height: 40px;
+  width: 98px;
+  color: white;
+}
+
+.formBtn:hover {
+  color: white;
+  background: #ff868d;
 }

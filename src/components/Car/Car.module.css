@@ -6,26 +6,36 @@
   /* border-radius: 14px; */
 }
 
+.box {
+  width: 60px;
+  height: 35px;
+  background: gray;
+  position: absolute;
+  right: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
 .icon {
-  filter: drop-shadow(0 0 2px #fff);
+  /* filter: drop-shadow(0 0 2px #fff); */
   width: 40px;
   height: 40px;
   position: absolute;
-  fill: gray;
+  fill: white;
   cursor: pointer;
-  top: 10px;
-  right: 10px;
+  top: -2px;
+  right: 18px;
 }
 
 .active {
-  filter: drop-shadow(0 0 10px #fff);
-  fill: #ff868d;
+  filter: drop-shadow(0 0 3px #fff);
+  fill: #f86f76;
   width: 40px;
   height: 40px;
   position: absolute;
   cursor: pointer;
-  top: 10px;
-  right: 10px;
+  top: -2px;
+  right: 18px;
 }
 
 .item {

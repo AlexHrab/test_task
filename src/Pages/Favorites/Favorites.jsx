@@ -28,7 +28,7 @@ export function Favorites() {
   return isLoading ? (
     <Loader />
   ) : (
-    <div>
+    <div className={css.Favorites}>
       <CarList cars={favoriteCars} modalOpen={isOpenModal} />
       {modalIsOpen && (
         <CarModal isOpen={modalIsOpen} onClose={close} object={object} />

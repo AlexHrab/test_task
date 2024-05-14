@@ -30,7 +30,9 @@ export function SearchForm({ setFormMileageValue, minValue, maxValue }) {
       <p className={css.min}>min:</p>
       <p className={css.max}>max:</p>
       <form onSubmit={Submit} className={css.form}>
-        <label htmlFor="mileage">Mileage:</label>
+        <label htmlFor="mileage" className={css.inputLabel}>
+          Mileage:
+        </label>
         <input
           className={css.input}
           id="mileage"

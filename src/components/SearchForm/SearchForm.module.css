@@ -6,7 +6,7 @@
   border: solid 2px gray;
   border-radius: 4px;
   padding: 4px;
-  padding-left: 40px;
+  padding-left: 50px;
   font-size: 18px;
   font-weight: 700;
   color: gray;
@@ -22,7 +22,7 @@
 .input:last-of-type {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  padding-left: 43px;
+  padding-left: 53px;
 }
 
 .formBox {
@@ -52,4 +52,10 @@
   font-size: 18px;
   font-weight: 700;
   color: gray;
+}
+
+.inputLabel {
+  color: #ff868d;
+  font-weight: 700;
+  font-size: 18px;
 }

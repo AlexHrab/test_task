@@ -1,0 +1,14 @@
+.image {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.list {
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}

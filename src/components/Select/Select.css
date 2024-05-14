@@ -48,7 +48,7 @@
 }
 
 .input__control {
-  width: 181px;
+  width: 143px;
   max-height: 25px;
   border: solid 2px gray !important;
   color: var(--white, #fbfbfb) !important;
