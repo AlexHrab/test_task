@@ -100,7 +100,7 @@ export function Navbar() {
 
   function reset() {
     dispatch(changeFilterCars(""));
-    dispatch(changeShowBtn(false));
+    dispatch(changeShowBtn(true));
   }
 
   return (

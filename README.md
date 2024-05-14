@@ -1,8 +1,23 @@
-# React + Vite
+Представляю вам платформу для оренди автомобілів. Сайт складається з трьох основних сторінок та навігаційного меню.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+На головній сторінці вас вітає запрошення, супроводжуюче значками різних марок автомобілів, які служать посиланнями на відповідні сторінки.
 
-Currently, two official plugins are available:
+На сторінці Каталогу представлені картки доступних для оренди автомобілів. Кожна картка містить зображення, короткий опис та кнопки: для відкриває модального вікна з детальнішою інформацією, та кнопки що додає автомобіль до списку улюблених. Пагінація дозволяє прогортати сторінки, а для завантаження додаткового контенту є кнопка "Load More".
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+На сторінці Favorites представлені картки автомобілів, які користувач відзначив як улюблені.
+
+У навігаційному меню розташовані інструменти для фільтрації доступних автомобілів. Користувач може обирати марку автомобіля та ціновий діапазон, а також встановлювати критерії фільтрації за пробігом, для скидання в меню селектів в самій горі знаходиться пуста строка. Можна також фільтрувати автомобілі залежно від пробігу задаючи відповідні дані в форму та натискаючи кнопку Search,для очищення введених даних у формі достатньо натиснути кнопку "Search" з пустими полями.
+
+Застосовані технології:
+vite,
+react,
+redux,
+redux-toolkit,
+axios,
+react-icons,
+react-loader-spinner,
+react-modal,
+react-redux,
+react-select,
+redux-persist,
+react-router-dom
