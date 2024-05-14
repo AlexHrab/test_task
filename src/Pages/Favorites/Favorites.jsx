@@ -4,7 +4,7 @@ import {
   selectLoading,
 } from "../../redux/cars/selectors";
 import { CarList } from "../../components/CarList/CarList";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import CarModal from "../../components/Modal/Modal";
 import { Loader } from "../../components/Loader/Loader";
 import css from "./Favorites.module.css";

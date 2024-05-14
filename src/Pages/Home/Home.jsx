@@ -1,25 +1,25 @@
 import { NavLink } from "react-router-dom";
 import css from "./Home.module.css";
 import { useDispatch } from "react-redux";
-import { changeFilterCars } from "../../redux/filter/slice";
-import { useSelector } from "react-redux";
-import { selectCars } from "../../redux/cars/selectors";
+import { changeFilterCars, changeShowBtn } from "../../redux/filter/slice";
+
 import { Logos } from "./Logo";
 import { Cars } from "../../components/Select/Cars";
 
 export function Home() {
   const dispatch = useDispatch();
-  // const cars = useSelector(selectCars);
 
   function onClick(value) {
     dispatch(changeFilterCars(value.toString()));
+    dispatch(changeShowBtn(false));
   }
 
   return (
     <div>
+      <p className={css.text}>Please select a car brand:</p>
       <ul className={css.list}>
         {Cars.slice(1).map((el) => (
-          <li>
+          <li key={el.value}>
             <NavLink
               to="catalog"
               className={css.car}

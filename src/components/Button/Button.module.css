@@ -31,7 +31,7 @@
   font-style: normal;
   font-weight: 600;
   line-height: 20px; /* 142.857% */
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
 }
 
 .formBtn {

@@ -2,8 +2,6 @@
   width: 274px;
   height: 288px;
   object-fit: cover;
-
-  /* border-radius: 14px; */
 }
 
 .box {
@@ -17,7 +15,6 @@
 }
 
 .icon {
-  /* filter: drop-shadow(0 0 2px #fff); */
   width: 40px;
   height: 40px;
   position: absolute;
@@ -48,8 +45,7 @@
   flex-direction: column;
   justify-content: space-between;
   background-color: grey;
-  /* align-items: flex-start; */
-  /* gap: 28px; */
+
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   padding-bottom: 10px;
 }
@@ -88,7 +84,7 @@
   height: 100px;
   width: 274;
   border-radius: 14px;
-  /* height: 138px; */
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;

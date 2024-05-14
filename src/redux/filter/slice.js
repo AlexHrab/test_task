@@ -7,6 +7,7 @@ export const initialFilter = {
   rentalFavoritePrice: null,
   mileage: { minMileage: null, maxMileage: Infinity },
   favoriteMileage: { minMileage: null, maxMileage: Infinity },
+  showBtn: true,
 };
 
 export const filterSlice = createSlice({
@@ -33,6 +34,9 @@ export const filterSlice = createSlice({
       state.favoriteMileage.minMileage = payload.minMileage;
       state.favoriteMileage.maxMileage = payload.maxMileage;
     },
+    changeShowBtn: (state, { payload }) => {
+      state.showBtn = payload;
+    },
   },
 });
 
@@ -43,3 +47,4 @@ export const { changeFilterPrice } = filterSlice.actions;
 export const { changeFavoriteFilterPrice } = filterSlice.actions;
 export const { changeFilterMileage } = filterSlice.actions;
 export const { changeFilterFavoriteMileage } = filterSlice.actions;
+export const { changeShowBtn } = filterSlice.actions;

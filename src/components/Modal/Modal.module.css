@@ -2,7 +2,7 @@
   width: 570px;
   height: 100vh;
   border-radius: 24px;
-  background: #fff;
+  background: gray;
   z-index: 999;
   position: absolute;
   top: 50%;
@@ -34,16 +34,16 @@
   display: block;
   margin-top: 0px;
   margin-bottom: 2px;
-  color: #121417;
+  color: white;
   font-family: Manrope;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
-  line-height: 24px; /* 133.333% */
+  line-height: 24px;
 }
 
 .model {
-  color: #3470ff;
+  color: #ff868d;
   font-family: Manrope;
   font-size: 18px;
   font-style: normal;
@@ -56,7 +56,7 @@
   box-sizing: border-box;
   width: 277px;
   height: 40px;
-  color: rgba(18, 20, 23, 0.5);
+  color: white;
   font-family: Manrope;
   font-size: 12px;
   font-style: normal;
@@ -66,7 +66,7 @@
 }
 
 .description {
-  color: #121417;
+  color: white;
   font-family: Manrope;
   font-size: 12px;
   font-style: normal;
@@ -77,7 +77,7 @@
 }
 
 .accessoriesTitle {
-  color: #121417;
+  color: white;
   font-family: Manrope;
   font-size: 14px;
   font-style: normal;
@@ -89,7 +89,7 @@
 }
 
 .accessoriesText {
-  color: rgba(18, 20, 23, 0.5);
+  color: white;
   font-family: Manrope;
   font-size: 12px;
   font-style: normal;
@@ -99,7 +99,7 @@
 }
 
 .functionalities {
-  color: rgba(18, 20, 23, 0.5);
+  color: white;
   font-family: Manrope;
   font-size: 12px;
   font-style: normal;
@@ -109,7 +109,7 @@
 }
 
 .rentalTitle {
-  color: #121417;
+  color: white;
   font-family: Manrope;
   font-size: 14px;
   font-style: normal;
@@ -145,12 +145,11 @@
   position: fixed;
   z-index: 1;
   top: 7%;
-  left: 75%;
+  left: 71%;
   transform: translate(-50%, -50%);
-  width: 40px !important;
-  height: 40px !important;
-
-  fill: rgba(18, 20, 23, 0.5);
+  width: 25px !important;
+  height: 25px !important;
+  fill: white;
   background-color: transparent;
   color: transparent;
 }
@@ -166,13 +165,13 @@
   font-size: 13px;
   font-style: normal;
   font-weight: 600;
-  line-height: 20px; /* 142.857% */
+  line-height: 20px;
   display: inline-flex;
   padding: 12px 50px;
   justify-content: center;
   align-items: center;
   border-radius: 12px;
-  background: #3470ff;
+  background: #ff868d;
   width: 70px;
   height: 20px;
   align-self: flex-start;
@@ -181,5 +180,5 @@
 .rentalAge,
 .mileageColor,
 .price {
-  color: #3470ff;
+  color: #ff868d;
 }

@@ -11,19 +11,14 @@ import {
   changeFavoriteFilterPrice,
   changeFilterMileage,
   changeFilterFavoriteMileage,
+  changeShowBtn,
 } from "../../redux/filter/slice";
 import { useSelector } from "react-redux";
-import {
-  selectCarsAmount,
-  selectCars,
-  selectFavorite,
-  selectRentalPrice,
-} from "../../redux/cars/selectors";
+
 import { useLocation } from "react-router-dom";
 import "../Select/Select.css";
 import { RentalPrice } from "../Select/rentalPrice";
 import {
-  selectRental,
   selectMileage,
   selectFavoriteMileage,
 } from "../../redux/filter/selectors";
@@ -34,7 +29,6 @@ import { GreatingText } from "../GreatingText/GreatingText";
 export function Navbar() {
   const currentMiliage = useSelector(selectMileage);
   const currentFavoriteMiliage = useSelector(selectFavoriteMileage);
-  console.log(currentMiliage);
 
   const [selectedCar, setSelectedCar] = useState({ value: "", label: "" });
   const [selectedFavoriteCar, setSelectedFavoriteCar] = useState({
@@ -104,6 +98,11 @@ export function Navbar() {
     return clsx(css.navLink, isActive && css.active);
   };
 
+  function reset() {
+    dispatch(changeFilterCars(""));
+    dispatch(changeShowBtn(false));
+  }
+
   return (
     <div className={css.Container}>
       <div className={css.navbarContainer}>
@@ -114,12 +113,12 @@ export function Navbar() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/catalog" className={linkClass}>
+            <NavLink to="/catalog" className={linkClass} onClick={reset}>
               Catalog
             </NavLink>
           </li>
           <li>
-            <NavLink to="/favorites" className={linkClass}>
+            <NavLink to="/favorites" className={linkClass} onClick={reset}>
               Favorites
             </NavLink>
           </li>

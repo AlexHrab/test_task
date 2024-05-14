@@ -1,6 +1,6 @@
 import Modal from "react-modal";
 import css from "./Modal.module.css";
-import { Button } from "../Button/Button";
+
 import { VscChromeClose } from "react-icons/vsc";
 
 function CarModal({ isOpen, onClose, object }) {

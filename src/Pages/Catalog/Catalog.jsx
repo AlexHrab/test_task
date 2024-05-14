@@ -1,11 +1,9 @@
 import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { fetchCars } from "../../redux/cars/operations";
-import { useEffect, useState } from "react";
+
+import { useState } from "react";
 import { CarList } from "../../components/CarList/CarList";
 import { Button } from "../../components/Button/Button";
-import { Cars } from "../../components/Select/Cars";
-import { MainSelect } from "../../components/Select/Select";
+
 import {
   selectCarsAmount,
   selectCars,
@@ -15,14 +13,13 @@ import {
 import CarModal from "../../components/Modal/Modal";
 import { Loader } from "../../components/Loader/Loader";
 import css from "./Catalog.module.css";
+import { selectShowBtn } from "../../redux/filter/selectors";
 
 export function Catalog({ onClick }) {
-  const dispatch = useDispatch();
   const carsAmount = useSelector(selectCarsAmount);
   const carSelect = useSelector(selectCars);
   const isLoading = useSelector(selectLoading);
-  // console.log(carsAmount);
-  // console.log(carSelect.length);
+  const showBtn = useSelector(selectShowBtn);
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [object, setObject] = useState({});
@@ -41,7 +38,7 @@ export function Catalog({ onClick }) {
   return (
     <div className={css.catalog}>
       <CarList cars={cars} modalOpen={isOpenModal} />
-      {carsAmount > carSelect.length && cars.length > 0 && (
+      {carsAmount > carSelect.length && cars.length > 0 && showBtn && (
         <Button
           type={"button"}
           credentionals={"Load more"}

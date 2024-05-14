@@ -113,7 +113,7 @@ export const Logos = [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Renault_2021_Text.svg/1024px-Renault_2021_Text.svg.png",
   },
   {
-    value: "Porshe",
+    value: "Porsche",
     label:
       "https://upload.wikimedia.org/wikipedia/commons/4/44/Porsche_hood_emblem.png",
   },

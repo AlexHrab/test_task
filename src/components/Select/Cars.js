@@ -23,7 +23,7 @@ export const Cars = [
   { value: "Land", label: "Land" },
   { value: "Opel", label: "Opel" },
   { value: "Renault", label: "Renault" },
-  { value: "Porshe", label: "Porshe" },
+  { value: "Porsche", label: "Porsche" },
   { value: "Ford", label: "Ford" },
   { value: "Mazda", label: "Mazda" },
 ];
