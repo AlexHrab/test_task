@@ -6,6 +6,7 @@ import {
   selecFavoriteRental,
   selectMileage,
   selectFavoriteMileage,
+  selectShowBtn,
 } from "../filter/selectors";
 
 export const selectCars = (state) => state.cars.cars;
@@ -15,11 +16,20 @@ export const selectRentalPrice = (state) => state.cars.carsRentalPrice;
 export const selectLoading = (state) => state.cars.loading;
 export const selectLoadCars = (state) => state.cars.loadCars;
 export const selectPage = (state) => state.cars.page;
+export const selectAllCars = (state) => state.cars.allCars;
 
 export const selectFilteredCarsMemo = createSelector(
-  [selectCars, selectCarsFilter, selectRental, selectMileage],
-  (cars, filterName, price, mileage) => {
-    return cars.filter(
+  [
+    selectAllCars,
+    selectCars,
+    selectShowBtn,
+    selectCarsFilter,
+    selectRental,
+    selectMileage,
+  ],
+  (allCars, cars, btn, filterName, price, mileage) => {
+    const carsAll = !btn ? allCars : cars;
+    return carsAll.filter(
       (car) =>
         car.make.toLowerCase().includes(filterName.toLowerCase()) &&
         Number(car.rentalPrice.slice(1)) >= price &&

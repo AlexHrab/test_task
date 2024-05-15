@@ -8,6 +8,7 @@ import {
 } from "./operations";
 
 const initialState = {
+  allCars: [],
   cars: [],
   carsAmount: null,
   loading: false,
@@ -36,6 +37,7 @@ export const slice = createSlice({
       })
       .addCase(fetchAllCars.fulfilled, (state, { payload }) => {
         state.carsAmount = payload.length;
+        state.allCars = payload;
         payload.map((el) => {
           state.carsRentalPrice.push(Number(el.rentalPrice.slice(1)));
         });
