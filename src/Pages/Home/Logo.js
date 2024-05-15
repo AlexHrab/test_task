@@ -42,7 +42,7 @@ export const Logos = [
   {
     value: "Hyundai",
     label:
-      "https://banner2.cleanpng.com/20180613/krl/kisspng-hyundai-motor-company-car-peter-stevens-motorworld-hyundai-logo-5b2101c7260308.7667543515288897991557.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Hyundai_symbol.svg/1920px-Hyundai_symbol.svg.png",
   },
   {
     value: "MINI",
