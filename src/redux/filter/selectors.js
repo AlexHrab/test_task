@@ -6,3 +6,4 @@ export const selecFavoriteRental = (state) => state.filter.rentalFavoritePrice;
 export const selectMileage = (state) => state.filter.mileage;
 export const selectFavoriteMileage = (state) => state.filter.favoriteMileage;
 export const selectShowBtn = (state) => state.filter.showBtn;
+export const selectCoordinate = (state) => state.filter.coordinate;

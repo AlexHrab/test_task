@@ -8,6 +8,7 @@ export const initialFilter = {
   mileage: { minMileage: null, maxMileage: Infinity },
   favoriteMileage: { minMileage: null, maxMileage: Infinity },
   showBtn: true,
+  coordinate: null,
 };
 
 export const filterSlice = createSlice({
@@ -37,6 +38,9 @@ export const filterSlice = createSlice({
     changeShowBtn: (state, { payload }) => {
       state.showBtn = payload;
     },
+    changeCoordinate: (state, { payload }) => {
+      state.coordinate = payload;
+    },
   },
 });
 
@@ -48,3 +52,4 @@ export const { changeFavoriteFilterPrice } = filterSlice.actions;
 export const { changeFilterMileage } = filterSlice.actions;
 export const { changeFilterFavoriteMileage } = filterSlice.actions;
 export const { changeShowBtn } = filterSlice.actions;
+export const { changeCoordinate } = filterSlice.actions;

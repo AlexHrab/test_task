@@ -2,9 +2,10 @@ import css from "./Car.module.css";
 import { HiHeart } from "react-icons/hi2";
 import { useDispatch, useSelector } from "react-redux";
 import { favoriteCar } from "../../redux/cars/operations";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { selectFavorite } from "../../redux/cars/selectors";
 import { Button } from "../Button/Button";
+import { changeCoordinate } from "../../redux/filter/slice";
 
 export function Car({ element, modalOpen }) {
   const dispatch = useDispatch();
@@ -13,8 +14,15 @@ export function Car({ element, modalOpen }) {
   const [isActive, setIsActive] = useState(true);
   const adress = element.address.split(",");
 
+  const carElementRef = useRef(null);
+
+  useEffect(() => {
+    const carElement = carElementRef.current.getBoundingClientRect();
+    dispatch(changeCoordinate(carElement.height));
+  }, []);
+
   return (
-    <li className={css.item}>
+    <li ref={carElementRef} className={css.item}>
       <div className={css.box}></div>
       <HiHeart
         className={carIsActive?.isActive ? css.active : css.icon}

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import { Home } from "./Pages/Home/Home";
@@ -12,19 +12,17 @@ import {
   loadCars,
   setNewPage,
 } from "./redux/cars/operations";
-import {
-  selectCarsAmount,
-  selectLoadCars,
-  selectPage,
-} from "./redux/cars/selectors";
-import { selectCars } from "./redux/cars/selectors";
+import { selectLoadCars, selectPage } from "./redux/cars/selectors";
+
 import { useSelector } from "react-redux";
+import { selectCoordinate } from "./redux/filter/selectors";
 
 function App() {
   const dispatch = useDispatch();
 
   const loadAllCars = useSelector(selectLoadCars);
   const page = useSelector(selectPage);
+  const scrolHeight = useSelector(selectCoordinate);
 
   useEffect(() => {
     dispatch(fetchAllCars());
@@ -34,14 +32,18 @@ function App() {
 
   useEffect(() => {
     if (loadAllCars) {
-      dispatch(fetchCars({ page, pageSize }));
-      dispatch(loadCars(false));
+      dispatch(fetchCars({ page, pageSize })).then(() => {
+        dispatch(loadCars(false));
+        window.scrollBy({
+          top: scrolHeight,
+          behavior: "smooth",
+        });
+      });
     }
   }, [pageSize, loadAllCars, page, dispatch]);
 
   function onClick() {
     dispatch(loadCars(true));
-
     dispatch(setNewPage(page + 1));
   }
 
