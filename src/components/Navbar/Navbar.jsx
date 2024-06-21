@@ -21,6 +21,8 @@ import { RentalPrice } from "../Select/rentalPrice";
 import {
   selectMileage,
   selectFavoriteMileage,
+  selectShowBtn,
+  selectCarsFilter,
 } from "../../redux/filter/selectors";
 import { SearchForm } from "../SearchForm/SearchForm";
 import clsx from "clsx";
@@ -29,6 +31,12 @@ import { GreatingText } from "../GreatingText/GreatingText";
 export function Navbar() {
   const currentMiliage = useSelector(selectMileage);
   const currentFavoriteMiliage = useSelector(selectFavoriteMileage);
+  const showBtn = useSelector(selectShowBtn);
+  const car = useSelector(selectCarsFilter);
+  const currentCar = Cars.find((el) => el.label === car);
+  console.log(showBtn);
+  console.log(car);
+  console.log(currentCar);
 
   const [selectedCar, setSelectedCar] = useState({ value: "", label: "" });
   const [selectedFavoriteCar, setSelectedFavoriteCar] = useState({
@@ -99,8 +107,8 @@ export function Navbar() {
   };
 
   function reset() {
-    dispatch(changeFilterCars(""));
     dispatch(changeShowBtn(true));
+    dispatch(changeFilterCars(""));
   }
 
   return (
@@ -133,7 +141,7 @@ export function Navbar() {
               <MainSelect
                 id="input"
                 options={Cars}
-                selectObj={selectedCar}
+                selectObj={showBtn ? selectedCar : currentCar}
                 SetselectObj={setSelectedCar}
                 className="selectInput"
                 classNamePrefix={"input"}
